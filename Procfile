@@ -1,2 +1,2 @@
-worker: python launcher.py
-pggggrgegegrggegegerge
+worker: python3 launcher.py
+pggggrgegegrggesssssgegerge
