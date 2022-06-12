@@ -28,10 +28,10 @@ class Bot(BotBase):
 		super().__init__(command_prefix=get_prefix, owner_ids=OWNER_IDS, intents=Intents.all())
 
 	def setup(self):
-		self.load_extension(lib.cogs.copypasta)
-		self.load_extension(lib.cogs.help)
-		self.load_extension(lib.cogs.meta)
-		self.load_extension(lib.cogs.misc)
+		self.load_extension("lib.cogs.copypasta")
+		self.load_extension("lib.cogs.help")
+		self.load_extension("lib.cogs.meta")
+		self.load_extension("lib.cogs.misc")
 		# for cog in COGS:
 		# 	self.load_extension(f"lib.cogs.{cog}")
 		# 	print(f"{cog} cog loaded")
