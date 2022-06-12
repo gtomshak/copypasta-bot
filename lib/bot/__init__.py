@@ -8,7 +8,7 @@ import os
 
 
 OWNER_IDS = [413332103690846208]
-COGS = [path.split("//")[-1][:-3] for path in glob("./lib/cogs/*.py")]
+COGS = [path.split("\\")[-1][:-3] for path in glob("./lib/cogs/*.py")]
 IGNORE_EXCEPTION = (CommandNotFound, BadArgument)
 
 def get_color():
