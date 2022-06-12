@@ -39,7 +39,7 @@ class Bot(BotBase):
 	def run(self):
 		print("running setup")
 		self.setup()
-		with open("./lib/bot/token.0", "r", encoding="utf-8") as tf:
+		with open("./lib/bot/token", "r", encoding="utf-8") as tf:
 			token = tf.read()
 		self.TOKEN = token
 
