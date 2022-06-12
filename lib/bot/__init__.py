@@ -4,6 +4,7 @@ from discord import Intents, Embed, File
 from datetime import datetime
 from ..db import db
 from glob import glob
+import os
 
 
 OWNER_IDS = [413332103690846208]
@@ -35,8 +36,7 @@ class Bot(BotBase):
 		print("running setup")
 		self.setup()
 
-		with open("./lib/bot/token", "r", encoding="utf-8") as tf:
-			self.TOKEN = tf.read()
+		self.TOKEN = os.environment["DISCORD_TOKEN"]
 
 		print("running bot...")
 		super().run(self.TOKEN, reconnect=True)
