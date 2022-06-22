@@ -82,7 +82,7 @@ class Bot(BotBase):
 		raise
 
 	async def on_guild_join(self, guild):
-		update_db()
+		self.update_db()
 
 	async def on_command_error(self, ctx, exc):
 		if isinstance(exc, CommandNotFound):
