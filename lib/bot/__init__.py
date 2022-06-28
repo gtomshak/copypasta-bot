@@ -81,6 +81,9 @@ class Bot(BotBase):
 			await args[0].send("Something went wrong.")
 		raise
 
+	async def on_guild_join(self, guild):
+		self.update_db()
+
 	async def on_command_error(self, ctx, exc):
 		if isinstance(exc, CommandNotFound):
 			pass

@@ -1,9 +1,1 @@
-"# copypasta-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-discord-bot" 
-"# copypasta-bot" 
+
