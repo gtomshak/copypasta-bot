@@ -62,7 +62,7 @@ class Bot(BotBase):
 		if not self.ready:	
 			# self.guild = self.get_guild(761083310654619659)
 			# self.stdout = self.get_channel(761083310654619662)
-			# self.update_db()
+			self.update_db()
 			meta = self.get_cog("Meta")
 			await meta.set()
 			self.ready = True
