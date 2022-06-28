@@ -49,8 +49,10 @@ class Bot(BotBase):
 
 	def update_db(self):
 		for guild in self.guilds:
-			db.multiexec("INSERT OR IGNORE INTO guilds (GuildID) VALUES (?)", (guild.id,))
-		db.commit()
+			duplicate = db.records("SELECT GuildID FROM guilds WHERE GuildID = ?", guild.id)
+			if len(duplicate)>=1:
+				db.multiexec("INSERT OR IGNORE INTO guilds (GuildID) VALUES (?)", (guild.id,))
+				db.commit()
 		
 	async def on_connect(self):
 		print("bot connected")
