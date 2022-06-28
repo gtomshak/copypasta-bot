@@ -48,12 +48,9 @@ class Bot(BotBase):
 		super().run(self.TOKEN, reconnect=True)
 
 	def update_db(self):
-		return
-		# for guild in self.guilds:
-		# 	duplicate = db.records("SELECT GuildID FROM guilds WHERE GuildID = ?", guild.id)
-		# 	if len(duplicate) is None:
-		# 		db.multiexec("INSERT INTO guilds (GuildID) VALUES (?)", (guild.id))
-		# 		db.commit()
+		for guild in self.guilds:
+			db.multiexec("INSERT OR IGNORE INTO guilds (GuildID) VALUES (?)", (guild.id,))
+		db.commit()
 		
 	async def on_connect(self):
 		print("bot connected")
@@ -65,7 +62,7 @@ class Bot(BotBase):
 		if not self.ready:	
 			# self.guild = self.get_guild(761083310654619659)
 			# self.stdout = self.get_channel(761083310654619662)
-			self.update_db()
+			# self.update_db()
 			meta = self.get_cog("Meta")
 			await meta.set()
 			self.ready = True
