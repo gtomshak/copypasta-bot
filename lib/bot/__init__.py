@@ -48,11 +48,12 @@ class Bot(BotBase):
 		super().run(self.TOKEN, reconnect=True)
 
 	def update_db(self):
-		for guild in self.guilds:
-			duplicate = db.records("SELECT GuildID FROM guilds WHERE GuildID = ?", guild.id)
-			if len(duplicate) is None:
-				db.multiexec("INSERT INTO guilds (GuildID) VALUES (?)", (guild.id))
-				db.commit()
+		return
+		# for guild in self.guilds:
+		# 	duplicate = db.records("SELECT GuildID FROM guilds WHERE GuildID = ?", guild.id)
+		# 	if len(duplicate) is None:
+		# 		db.multiexec("INSERT INTO guilds (GuildID) VALUES (?)", (guild.id))
+		# 		db.commit()
 		
 	async def on_connect(self):
 		print("bot connected")
